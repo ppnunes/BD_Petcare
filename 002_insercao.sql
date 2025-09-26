@@ -1,48 +1,36 @@
 -- População inicial do banco de dados ajustada para o novo esquema e com 10 tutores e seus pets
 
 -- Usuários (tutores e um administrador)
-INSERT INTO Usuario (nome, email, senha) VALUES
-('Carlos Silva', 'carlos.tutor@email.com', 'senha123'),
-('Maria Oliveira', 'maria.admin@email.com', 'admin123'),
-('Joana Costa', 'joana.costa@email.com', 'senha456'),
-('Ricardo Lima', 'ricardo.lima@email.com', 'senha789'),
-('Fernanda Souza', 'fernanda.souza@email.com', 'senha234'),
-('Paulo Mendes', 'paulo.mendes@email.com', 'senha987'),
-('Ana Paula', 'ana.paula@email.com', 'senha654'),
-('Marcos Vinicius', 'marcos.vinicius@email.com', 'senha741'),
-('Juliana Rocha', 'juliana.rocha@email.com', 'senha852'),
-('Roberto Duarte', 'roberto.duarte@email.com', 'senha963'),
-('Isabela Martins', 'isabela.martins@email.com', 'senha159');
+INSERT INTO Usuario (senha) VALUES
+('senha123'),
+('admin123'),
+('senha456'),
+('senha789'),
+('senha234'),
+('senha987'),
+('senha654'),
+('senha741'),
+('senha852'),
+('senha963'),
+('senha159');
+
 
 -- Tutor (relacionando aos usuários)
-INSERT INTO Tutor (id_usuario, nome, CPF, email, rua, numero, bairro, CEP) VALUES
-(1, 'Carlos Silva', '123.456.789-00', 'carlos.tutor@email.com', 'Rua das Flores', '123', 'Centro', '12345-678'),
-(3, 'Joana Costa', '234.567.890-11', 'joana.costa@email.com', 'Av. Brasil', '200', 'Jardim', '23456-789'),
-(4, 'Ricardo Lima', '345.678.901-22', 'ricardo.lima@email.com', 'Rua da Paz', '45', 'Boa Vista', '34567-890'),
-(5, 'Fernanda Souza', '456.789.012-33', 'fernanda.souza@email.com', 'Rua Verde', '67', 'Parque', '45678-901'),
-(6, 'Paulo Mendes', '567.890.123-44', 'paulo.mendes@email.com', 'Av. Central', '89', 'Centro', '56789-012'),
-(7, 'Ana Paula', '678.901.234-55', 'ana.paula@email.com', 'Rua Azul', '101', 'Vila Nova', '67890-123'),
-(8, 'Marcos Vinicius', '789.012.345-66', 'marcos.vinicius@email.com', 'Rua Rio', '202', 'Industrial', '78901-234'),
-(9, 'Juliana Rocha', '890.123.456-77', 'juliana.rocha@email.com', 'Av. Atlântica', '303', 'Praia', '89012-345'),
-(10, 'Roberto Duarte', '901.234.567-88', 'roberto.duarte@email.com', 'Rua Lago', '404', 'Lagoa', '90123-456'),
-(11, 'Isabela Martins', '012.345.678-99', 'isabela.martins@email.com', 'Rua Sol', '505', 'Jardim', '01234-567');
+INSERT INTO Tutor (id_usuario, nome, CPF, email, telefone, rua, numero, bairro, CEP) VALUES
+(1, 'Carlos Silva', '123.456.789-00', 'carlos.tutor@email.com', '11999991111', 'Rua das Flores', '123', 'Centro', '12345-678'),
+(3, 'Joana Costa', '234.567.890-11', 'joana.costa@email.com', '21988881234', 'Av. Brasil', '200', 'Jardim', '23456-789'),
+(4, 'Ricardo Lima', '345.678.901-22', 'ricardo.lima@email.com', '31977774321', 'Rua da Paz', '45', 'Boa Vista', '34567-890'),
+(5, 'Fernanda Souza', '456.789.012-33', 'fernanda.souza@email.com', '41966662345', 'Rua Verde', '67', 'Parque', '45678-901'),
+(6, 'Paulo Mendes', '567.890.123-44', 'paulo.mendes@email.com', '51955553456', 'Av. Central', '89', 'Centro', '56789-012'),
+(7, 'Ana Paula', '678.901.234-55', 'ana.paula@email.com', '61944444567', 'Rua Azul', '101', 'Vila Nova', '67890-123'),
+(8, 'Marcos Vinicius', '789.012.345-66', 'marcos.vinicius@email.com', '71933335678', 'Rua Rio', '202', 'Industrial', '78901-234'),
+(9, 'Juliana Rocha', '890.123.456-77', 'juliana.rocha@email.com', '81922226789', 'Av. Atlântica', '303', 'Praia', '89012-345'),
+(10, 'Roberto Duarte', '901.234.567-88', 'roberto.duarte@email.com', '85900008901', 'Rua Lago', '404', 'Lagoa', '90123-456'),
+(11, 'Isabela Martins', '012.345.678-99', 'isabela.martins@email.com', '85900008902', 'Rua Sol', '505', 'Jardim', '01234-567');
 
--- Telefones dos Tutores (um ou dois por tutor)
-INSERT INTO TelefoneTutor (id_tutor, telefone) VALUES
-(1, '(11) 99999-1111'),
-(1, '(11) 98888-2222'),
-(2, '(21) 98888-1234'),
-(3, '(31) 97777-4321'),
-(4, '(41) 96666-2345'),
-(5, '(51) 95555-3456'),
-(6, '(61) 94444-4567'),
-(7, '(71) 93333-5678'),
-(8, '(81) 92222-6789'),
-(9, '(91) 91111-7890'),
-(10, '(85) 90000-8901'),
-(10, '(85) 90000-8902');
 
--- Administrador (relacionado ao segundo usuário)
+-- Telefones dos Tutores removidos (campo telefone está na tabela Tutor)
+
 INSERT INTO Administrador (id_usuario, cargo, nivel_de_acesso) VALUES
 (2, 'Administrador Geral', 10);
 
@@ -88,12 +76,11 @@ INSERT INTO ConteudoEducativo (titulo, tipo, descricao, data_publicacao) VALUES
 ('Cuidados com filhotes', 'Artigo', 'Dicas essenciais para novos tutores.', '2024-01-15'),
 ('Vacinação obrigatória', 'Vídeo', 'A importância das vacinas para pets.', '2024-03-10');
 
--- TutorConteudo (Relacionamento tutor-conteúdo)
-INSERT INTO TutorConteudo (id_tutor, id_conteudo, data_interacao) VALUES
-(1, 1, '2024-01-16'),
-(1, 2, '2024-03-15'),
-(2, 1, '2024-04-10'),
-(3, 2, '2024-04-20');
+INSERT INTO TutorConteudo (id_tutor, id_conteudo) VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(3, 2);
 
 -- Pedidos (endereços de entrega preenchidos conforme campos do Tutor)
 INSERT INTO Pedido (id_tutor, data_pedido, valorTotal, status, rua, numero, bairro, CEP) VALUES

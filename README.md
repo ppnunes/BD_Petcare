@@ -3,22 +3,6 @@
 
 Este projeto consiste em um sistema de gerenciamento para uma clínica veterinária, incluindo controle de tutores, pets, vacinas, medicamentos, pedidos e conteúdos educativos. O banco de dados foi modelado para contemplar entidades fortes, fracas, associativas e especializadas, conforme descrito abaixo.
 
-## Como rodar o projeto com Docker Compose
-
-Para facilitar a execução do banco de dados, utilize o Docker Compose. Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina.
-
-1. No terminal, navegue até a pasta do projeto:
-2. Execute o comando para subir os containers:
-	```sh
-	docker-compose up
-	```
-3. O banco de dados estará disponível conforme definido no arquivo `docker-compose.yml` (localhost:3306).
-
-4. Para parar os containers:
-	```sh
-	docker-compose down
-	```
-
 # Descrição das Tabelas do Projeto
 
 ## Entidades Fortes
@@ -29,7 +13,7 @@ Para facilitar a execução do banco de dados, utilize o Docker Compose. Certifi
 | **Pet**            | id_pet (PK), nome, espécie, raça, data_nascimento, sexo, id_tutor (FK)     |
 | **Medicamento**    | id_medicamento (PK), nome, descrição, fabricante, preço, estoque           |
 | **ConteudoEducativo** | id_conteudo (PK), titulo, tipo, descricao, data_publicacao              |
-| **Pedido**         | id_pedido (PK), data_pedido, valor_total, status                           |
+| **Pedido**         | id_pedido (PK), data_pedido, valor_total, status, endereço_entrega                           |
 
 ## Entidades Fracas
 
