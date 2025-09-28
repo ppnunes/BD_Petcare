@@ -60,12 +60,13 @@ SET
     status = 'Em Preparação'
 WHERE
     id_pedido = 2;
+SELECT * FROM Pedido WHERE id_pedido = 2;
 
+    
 UPDATE Medicamento
-SET
-    preco = preco + 5.00
-WHERE
-    estoque > 40;
+SET preco = preco + 5.00
+WHERE estoque > 40 AND id_medicamento > 0;
+SELECT * FROM Medicamento WHERE estoque > 40;
 
 UPDATE Administrador
 SET
@@ -73,6 +74,7 @@ SET
     nivel_de_acesso = 15
 WHERE
     id_administrador = 1; 
+SELECT * FROM Administrador WHERE id_administrador = 1;
 
 
 UPDATE Pet
@@ -81,7 +83,12 @@ SET
     data_nascimento = '2022-03-20'
 WHERE
     id_pet = 5;
+SELECT * FROM Pet WHERE id_pet = 5;
 
+
+DELETE FROM ConteudoEducativo
+WHERE
+    titulo = 'Vacinação obrigatória';
 
 DELETE FROM ConteudoEducativo
 WHERE
