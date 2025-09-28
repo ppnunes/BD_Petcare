@@ -1,12 +1,22 @@
 
-# Projeto de Laboratório de Banco de Dados
+# 🐾 Sistema de Gerenciamento de Clínica Veterinária
 
 Este projeto consiste em um sistema de gerenciamento para uma clínica veterinária, incluindo controle de tutores, pets, vacinas, medicamentos, pedidos e conteúdos educativos. O banco de dados foi modelado para contemplar entidades fortes, fracas, associativas e especializadas, conforme descrito abaixo.
+
+## 📑 Sumário
+- [Descrição do Projeto](#descrição-do-projeto)
+- [Descrição das Tabelas](#descrição-das-tabelas)
+- [Funcionalidades](#funcionalidades)
+- [Cardinalidades](#cardinalidades)
+- [Tipos de Atributos](#tipos-de-atributos)
+- [Chaves](#chaves)
+- [Equipe](#equipe)
 
 # Descrição das Tabelas do Projeto
 
 ## Entidades Fortes
-
+- **Entidades fortes** (Tutor, Pet, Medicamento, Pedido, Conteúdo Educativo)
+ 
 | Tabela             | Atributos                                                                 |
 |--------------------|---------------------------------------------------------------------------|
 | **Tutor**          | id_tutor (PK), nome, CPF, telefone, email, endereço                       |
@@ -16,12 +26,15 @@ Este projeto consiste em um sistema de gerenciamento para uma clínica veteriná
 | **Pedido**         | id_pedido (PK), data_pedido, valor_total, status, endereço_entrega                           |
 
 ## Entidades Fracas
-
+- **Entidades fracas** (Vacina)
+ 
 | Tabela   | Atributos                                             |
 |----------|-------------------------------------------------------|
 | **Vacina** | id_vacina (PK), nome, validade, data_aplicacao, id_pet (FK) |
 
 ## Entidades Associativas
+- **Entidades associativas** (PetMedicamento, ItemPedido, TutorConteudo)
+ 
 
 | Tabela         | Atributos                                             |
 |----------------|-------------------------------------------------------|
@@ -30,13 +43,20 @@ Este projeto consiste em um sistema de gerenciamento para uma clínica veteriná
 | **TutorConteudo**  | id_tutor (FK), id_conteudo (FK)                    |
 
 ## Entidades Especializadas
-
+- **Entidades especializadas** (Usuário → Tutor / Administrador)
+ 
 | Tabela           | Atributos                                  |
 |------------------|--------------------------------------------|
 | **Usuário**      | id_usuario (PK), nome, email, senha        |
 | **Tutor**        | especialização de Usuário                  |
 | **Administrador**| especialização de Usuário                  |
 
+## ✅ Funcionalidades
+- Cadastro de tutores e seus pets  
+- Registro de vacinas aplicadas em pets  
+- Controle de medicamentos e estoque  
+- Gestão de pedidos e itens de pedido  
+- Acesso a conteúdos educativos para tutores 
 ---
 
 ## Cardinalidades
@@ -75,3 +95,28 @@ Este projeto consiste em um sistema de gerenciamento para uma clínica veteriná
 **Compostas:**
 - Em ItemPedido: (id_pedido, id_medicamento)
 - Em TutorConteudo: (id_tutor, id_conteudo)
+
+## 👨‍💻 Equipe
+- Erick (modelagem)
+- Priscila, Ana Beatriz e Emanoel (modelagem, consultas SQL e organização)
+- Camile e Fabiana (documentação, scripts e finalização)
+
+## ▶️ Como Executar
+1. Clone este repositório:
+```bash
+git clone https://github.com/ppnunes/BD_Petcare.git
+```
+2. Acesse a pasta do projeto:
+```bash
+cd BD_Petcare
+```
+3. Importe o script SQL no seu SGBD:
+```bash
+mysql -u usuario -p < script.sql
+```
+ou
+```bash
+psql -U usuario -d banco < script.sql
+```
+4. Execute as queries de teste no arquivo `consultas.sql`. 
+ 
