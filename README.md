@@ -51,7 +51,7 @@ Este projeto consiste em um sistema de gerenciamento para uma clínica veteriná
 | **Tutor**        | especialização de Usuário                  |
 | **Administrador**| especialização de Usuário                  |
 
-## ✅ Funcionalidades
+## Funcionalidades
 - Cadastro de tutores e seus pets  
 - Registro de vacinas aplicadas em pets  
 - Controle de medicamentos e estoque  
@@ -96,12 +96,12 @@ Este projeto consiste em um sistema de gerenciamento para uma clínica veteriná
 - Em ItemPedido: (id_pedido, id_medicamento)
 - Em TutorConteudo: (id_tutor, id_conteudo)
 
-## 👨‍💻 Equipe
+## Equipe
 - Erick (modelagem)
 - Priscila, Ana Beatriz e Emanoel (modelagem, consultas SQL e organização)
 - Camile e Fabiana (documentação, scripts e finalização)
 
-## ▶️ Como Executar
+## Como Executar
 1. Clone este repositório:
 ```bash
 git clone https://github.com/ppnunes/BD_Petcare.git
