@@ -1,4 +1,4 @@
-## 🐾Sistema de Gerenciamento de Clínica Veterinária (BD_Petcare)
+## Sistema de Gerenciamento de Clínica Veterinária (BD_Petcare)
 
 Este projeto consiste em um sistema de gerenciamento para uma clínica veterinária, incluindo controle de tutores, pets, vacinas, medicamentos, pedidos e conteúdos educativos. O banco de dados foi modelado para contemplar entidades fortes, fracas, associativas e especializadas.
 
